@@ -1,0 +1,12 @@
+- name: Installs s4cmd
+  pip: name=s4cmd state=latest
+
+- name: Adds s3 credentials
+  template: >
+    src=../templates/s3cfg.j2
+    dest=~{{ s3cmd_user }}/.s3cfg
+    owner={{ s3cmd_user }}
+    mode=600
+
+- name: Sync {{ source_bucket }} bucket to {{ dest_bucket }} bucket
+  command: /usr/local/bin/s4cmd sync s3://{{ source_bucket }}/ s3://{{ dest_bucket }}/
