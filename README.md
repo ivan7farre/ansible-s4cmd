@@ -16,7 +16,7 @@ Role Variables
 - `s3cmd_access_key`: S3 access key
 - `s3cmd_secret_key`: S3 secret key
 - `s3cmd_user`: Username to deploy configuration to
-- `source_bucket: Source bucket to sync
+- `source_bucket`: Source bucket to sync
 - `dest_bucket`: Destination bucket to sync
 
 Usage
